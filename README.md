@@ -2,13 +2,15 @@
 
 This repository contains all the projects completed during my CodeAlpha Internship.
 
-## Completed Tasks
+---
 
-### ✅ Task 1 - Cartique MERN E-Commerce Store
+# 📂 Completed Tasks
 
-A complete full-stack E-Commerce web application built using the MERN Stack.
+## ✅ Task 1 - Cartique MERN E-Commerce Store
 
-### Technologies Used
+A modern full-stack E-Commerce web application built using the MERN Stack.
+
+### Tech Stack
 
 - React
 - Node.js
@@ -17,19 +19,53 @@ A complete full-stack E-Commerce web application built using the MERN Stack.
 - Tailwind CSS
 - JWT Authentication
 
-Project Folder
+📁 Folder:
 
 ```
 Task-1-Cartique-MERN-ECommerce
 ```
 
-More tasks will be added during the internship.
+---
+
+## ✅ Task 2 - EcoHub Social Media Platform
+
+A modern full-stack social media application where users can create posts, interact with others, receive notifications, and manage their profiles.
+
+### Tech Stack
+
+- React
+- Node.js
+- Express.js
+- MongoDB
+- Tailwind CSS
+- JWT Authentication
+
+### Features
+
+- User Authentication
+- Create/Edit/Delete Posts
+- Like & Comment System
+- User Profiles
+- Notifications
+- Admin Dashboard
+- Search
+- Responsive UI
+
+📁 Folder:
+
+```
+Task-2-EcoHub-Social-Media
+```
 
 ---
 
-### Author
+More internship tasks will be added here as I complete them.
 
-Ankit Kumar Gupta
+---
+
+# 👨‍💻 Author
+
+**Ankit Kumar Gupta**
 
 B.Tech CSE (AI & ML)
 

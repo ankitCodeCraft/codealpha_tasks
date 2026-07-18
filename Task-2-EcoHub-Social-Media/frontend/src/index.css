@@ -1,0 +1,360 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@import "tailwindcss";
+
+/* ============================================================
+   EcoHub — Ultra-Premium Minimalist Design System
+   ============================================================ */
+
+@layer base {
+  :root {
+    --ig-bg: #fafafa;
+    --ig-surface: #ffffff;
+    --ig-surface-2: #f8fafc;
+    --ig-surface-3: #f1f5f9;
+    --ig-border: rgba(0, 0, 0, 0.06);
+    --ig-border-light: rgba(0, 0, 0, 0.03);
+    --ig-text: #0f172a;
+    --ig-text-secondary: #475569;
+    --ig-text-muted: #94a3b8;
+    --ig-accent: #10b981;
+    --ig-accent-hover: #059669;
+    --ig-red: #ef4444;
+    --ig-story-1: #10b981;
+    --ig-story-2: #34d399;
+    --ig-story-3: #6ee7b7;
+    --sidebar-width: 244px;
+    --font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    background-color: var(--ig-bg);
+  }
+
+  body {
+    background-color: var(--ig-bg);
+    color: var(--ig-text);
+    font-family: var(--font);
+    font-size: 14px;
+    line-height: 1.5;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+/* ============================================================
+   SCROLLBARS
+   ============================================================ */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 999px; }
+::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* ============================================================
+   INSTAGRAM STORY RING
+   ============================================================ */
+.story-ring {
+  background: linear-gradient(45deg, var(--ig-story-1), var(--ig-story-2), var(--ig-story-3));
+  padding: 2px;
+  border-radius: 50%;
+}
+
+.story-ring-inner {
+  background: var(--ig-surface);
+  border-radius: 50%;
+  padding: 2px;
+}
+
+.story-ring-sm {
+  background: linear-gradient(45deg, var(--ig-story-1), var(--ig-story-2), var(--ig-story-3));
+  padding: 2px;
+  border-radius: 50%;
+}
+
+/* ============================================================
+   PREMIUM CARDS
+   ============================================================ */
+.ig-card {
+  background: var(--ig-surface);
+  border-radius: 20px;
+  border: 1px solid var(--ig-border);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02), 0 20px 40px -10px rgba(0,0,0,0.04);
+  transition: box-shadow 0.3s ease;
+}
+
+.ig-surface {
+  background: var(--ig-surface);
+  border-radius: 16px;
+  border: 1px solid var(--ig-border);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02), 0 10px 20px -5px rgba(0,0,0,0.03);
+}
+
+/* ============================================================
+   HEART ANIMATION
+   ============================================================ */
+@keyframes heart-pop {
+  0%   { transform: scale(1); }
+  15%  { transform: scale(1.35); }
+  30%  { transform: scale(0.9); }
+  45%  { transform: scale(1.15); }
+  60%  { transform: scale(1); }
+}
+.heart-pop { animation: heart-pop 0.45s cubic-bezier(0.17, 0.89, 0.32, 1.25); }
+
+/* ============================================================
+   DOUBLE TAP HEART
+   ============================================================ */
+@keyframes heart-float {
+  0%   { transform: translate(-50%, -50%) scale(0); opacity: 1; }
+  25%  { transform: translate(-50%, -50%) scale(1.4); opacity: 1; }
+  100% { transform: translate(-50%, -55%) scale(1.1); opacity: 0; }
+}
+.heart-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  pointer-events: none;
+  animation: heart-float 0.8s ease-out forwards;
+  z-index: 30;
+}
+
+/* ============================================================
+   PREMIUM INPUT
+   ============================================================ */
+.ig-input {
+  background: var(--ig-surface);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  padding: 12px 16px;
+  font-size: 15px;
+  font-family: var(--font);
+  width: 100%;
+  color: var(--ig-text);
+  outline: none;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.ig-input:focus {
+  border-color: var(--ig-accent);
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.15);
+}
+.ig-input::placeholder { color: var(--ig-text-muted); }
+
+/* ============================================================
+   PREMIUM BUTTONS
+   ============================================================ */
+.ig-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 20px;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  font-family: var(--font);
+  background: var(--ig-surface);
+  color: var(--ig-text);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+}
+.ig-btn:active {
+  transform: scale(0.97);
+}
+.ig-btn:hover {
+  background: var(--ig-surface-2);
+}
+
+.ig-btn-primary {
+  background: var(--ig-text); /* Sleek pure dark button */
+  color: #fff;
+  border: none;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.15);
+}
+.ig-btn-primary:hover {
+  background: #1e293b;
+  box-shadow: 0 6px 16px rgba(15, 23, 42, 0.2);
+  transform: translateY(-1px);
+}
+.ig-btn-primary:active {
+  transform: scale(0.97);
+}
+
+.ig-btn-outline {
+  background: var(--ig-surface);
+  border: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+.ig-btn-ghost {
+  box-shadow: none;
+  background: transparent;
+  border: none;
+}
+.ig-btn-ghost:hover {
+  background: var(--ig-surface-3);
+  box-shadow: none;
+}
+
+/* ============================================================
+   GRIDS
+   ============================================================ */
+.ig-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+@media (max-width: 640px) { .ig-grid { gap: 8px; } }
+
+.explore-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+.explore-grid .explore-large {
+  grid-row: span 2;
+  grid-column: span 1;
+}
+@media (max-width: 640px) { .explore-grid { gap: 8px; } }
+
+/* ============================================================
+   STORIES SCROLL
+   ============================================================ */
+.stories-strip {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  padding: 16px 8px;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.stories-strip::-webkit-scrollbar { display: none; }
+
+/* ============================================================
+   SIDEBAR NAV ITEM
+   ============================================================ */
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 12px 16px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  color: var(--ig-text-secondary);
+  font-weight: 500;
+  font-size: 16px;
+  text-decoration: none;
+  white-space: nowrap;
+  background: transparent;
+  box-shadow: none;
+}
+.nav-item:hover {
+  background: rgba(0, 0, 0, 0.03);
+  color: var(--ig-text);
+}
+.nav-item.active {
+  font-weight: 700;
+  color: var(--ig-text);
+  background: rgba(0, 0, 0, 0.05);
+}
+.nav-item.active svg { stroke-width: 2.5; color: var(--ig-text); }
+
+/* ============================================================
+   ANIMATIONS
+   ============================================================ */
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.fade-up {
+  animation: fade-up 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes shimmer {
+  0%   { background-position: -400px 0; }
+  100% { background-position: 400px 0; }
+}
+.skeleton {
+  background: linear-gradient(90deg, rgba(0,0,0,0.02) 25%, rgba(0,0,0,0.06) 50%, rgba(0,0,0,0.02) 75%);
+  background-size: 800px 100%;
+  animation: shimmer 1.5s infinite linear;
+  border-radius: 12px;
+}
+
+/* ============================================================
+   MODAL OVERLAY
+   ============================================================ */
+.ig-modal-bg {
+  position: fixed;
+  inset: 0;
+  background: rgba(250, 250, 250, 0.6);
+  backdrop-filter: blur(8px);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+}
+
+.ig-modal {
+  background: var(--ig-surface);
+  border-radius: 24px;
+  width: 100%;
+  max-height: 90vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.08);
+  border: 1px solid var(--ig-border);
+}
+
+/* ============================================================
+   MISC UTILITIES
+   ============================================================ */
+.text-ig-secondary { color: var(--ig-text-secondary); }
+.text-ig-muted { color: var(--ig-text-muted); }
+.bg-ig { background: var(--ig-bg); }
+.bg-ig-surface { background: var(--ig-surface); }
+.border-ig { border-color: var(--ig-border); }
+
+.truncate-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Glass kept for backward compat */
+.glass {
+  background: var(--ig-surface);
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+}
+.glass-card {
+  background: var(--ig-surface);
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+}
+.glass-input {
+  background: var(--ig-surface);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  padding: 12px 16px;
+  color: var(--ig-text);
+}
+.glass-input:focus {
+  outline: none;
+  border-color: var(--ig-text);
+}
