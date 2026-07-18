@@ -146,17 +146,45 @@ JWT_SECRET=your_secret_key
 
 # 📷 Screenshots
 
-Add screenshots inside the `screenshots` folder.
+## Home
 
-Example:
+![Home](screenshots/home.png)
 
-- Home
-- Login
-- Register
-- Feed
-- Profile
-- Notifications
-- Admin Dashboard
+---
+
+## Login
+
+![Login](screenshots/login.png)
+
+---
+
+## Register
+
+![Register](screenshots/register.png)
+
+---
+
+## Feed
+
+![Feed](screenshots/feed.png)
+
+---
+
+## Profile
+
+![Profile](screenshots/profile.png)
+
+---
+
+## Notifications
+
+![Notifications](screenshots/notifications.png)
+
+---
+
+## Admin Dashboard
+
+![Admin Dashboard](screenshots/admin-dashboard.png)
 
 ---
 
